@@ -5,7 +5,7 @@ function twoSum($arr, $target)
     $found = [];
     foreach ($arr as $k => $num) {
         if (isset($found[$target - $num])) {
-            return [$k, $found[$target - $num]];
+            return [$found[$target - $num], $k];
         }
         if (!isset($found[$num])) {
             $found[$num] = $k;
