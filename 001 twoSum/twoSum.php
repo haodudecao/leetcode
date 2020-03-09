@@ -18,7 +18,7 @@ function twoSum($nums, $target) {
     foreach($nums as $key => $val){
         $diff = $target - $val;
         if(!isset($found[$diff])){
-            $found[$val] = $key;
+            $found[$val] = $key;//这一步不需要判断是否有重复的值，如果有的话，会在上一行 $found[$diff] 为 true 直接 return
             continue;
         }
         return [$key, $found[$diff]];
