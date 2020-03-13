@@ -1,0 +1,1 @@
+select * from Person group by Email haveing count(Email) > 1;
