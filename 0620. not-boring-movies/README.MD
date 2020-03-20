@@ -2,6 +2,8 @@
 简单的小题
 ```
 select * from cinema where description <> 'boring' and id % 2 = 1 order by rating desc;
+select * from cinema where description <> 'boring' and mod(10,2)=1 order by rating desc; 
+
 
 ```
 
