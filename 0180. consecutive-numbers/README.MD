@@ -20,3 +20,23 @@ SELECT t.Num ,
   FROM Logs t, (SELECT @pre:=null, @cnt:=0) b) a
   WHERE a.cnt >= 3
   ```
+语法解释：
+```
+IF(expr1,  expr2, expr3) //三元表达式
+@pre:=10 // 变量赋值语法
+```
+使用select 语句设置变量，可看做表，在datagrip中直接运行可以显示为表 pre ==> 记录上一个值， cnt ==> 记录次数，
+```
+select @pre:=null,  @cnt:=0 
+```
+如果pre与t.num 相等，则cnt加1， 否则cnt重置为1
+```
+ @cnt:=IF(@pre=t.Num, @cnt+1, 1) cnt
+ ```
+将生成的num与cnt次数的表，作为新的表 a
+```
+(SELECT t.Num ,
+       @cnt:=IF(@pre=t.Num, @cnt+1, 1) cnt,
+       @pre:=t.Num pre
+  FROM Logs t, (SELECT @pre:=null, @cnt:=0) b) a
+  ```
