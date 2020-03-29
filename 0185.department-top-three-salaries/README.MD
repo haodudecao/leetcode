@@ -1,4 +1,5 @@
-`Employee` 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。
+## 题目
+`Employee` 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。
 ```
 +----+-------+--------+--------------+
 | Id | Name  | Salary | DepartmentId |
@@ -37,3 +38,19 @@
 解释：
 
 IT 部门中，Max 获得了最高的工资，Randy 和 Joe 都拿到了第二高的工资，Will 的工资排第三。销售部门（Sales）只有两名员工，Henry 的工资最高，Sam 的工资排第二。
+
+## 题解
+```sql
+SELECT
+d.name as department,
+	E1.NAME Employee,
+	E1.salary 
+	
+FROM
+	Employee E1 join department d  on E1.departmentid = d.id
+WHERE
+( 
+	select count(distinct E2.salary) from Employee  E2 where E1.salary <E2.salary AND e1.DepartmentId = e2.DepartmentId
+ )
+ < 3 order by department, salary desc;
+```
