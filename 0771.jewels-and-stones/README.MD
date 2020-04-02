@@ -1,4 +1,4 @@
- ``` 
+ ```php
     function numJewelsInStones($J, $S) {
         $len = strlen($J);
         $num = 0;
