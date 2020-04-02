@@ -2,7 +2,7 @@
 <?php
     /**
     * 函数解法
-    /
+    */
     function numJewelsInStones($J, $S) {
         $len = strlen($J);
         $num = 0;
