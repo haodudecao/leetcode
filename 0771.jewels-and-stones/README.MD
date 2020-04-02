@@ -15,11 +15,11 @@
     
     //不用函数
     function numJewelsInStones($J, $S) {
-        for ($j = 0;$j < strlen($J);$j++) {
+        for ($j = 0,$length = strlen($J);$j < $length;$j++) {
             $arr[$J[$j]] = '';
         }
         $num = 0;
-        for ($s = 0; $s < strlen($S); $s++) {
+        for ($s = 0,$length = strlen($S); $s < $length; $s++) {
             if(isset($arr[$S[$s]])) {
                 $num++;
             }
