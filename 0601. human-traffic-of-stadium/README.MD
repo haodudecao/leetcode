@@ -1,3 +1,4 @@
+```sql
 SELECT
 	* 
 FROM
@@ -10,3 +11,4 @@ WHERE
 	AND a.people > 100 
 	AND b.people > 100 
 	AND c.people > 100
+	```
