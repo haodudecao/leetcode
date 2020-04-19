@@ -3,8 +3,7 @@
 ```php
 /**
  * Definition for a singly-linked list.
- *
- /
+ */
   class ListNode {
       public $val = 0;
       public $next = null;
@@ -58,8 +57,7 @@ ListNode Object
  * @param ListNode $l1
  * @param ListNode $l2
  * @return ListNode
- *
- /
+ */
     function addTwoNumbers($l1, $l2) {
         $newLinkedList = new ListNode(0);
         $newTmp = $newLinkedList;
